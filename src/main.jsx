@@ -26,9 +26,9 @@ const router = createBrowserRouter([
         loader:()=> fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=chicken'),
       },
       {
-        path:"/food/:id",
+        path:"/meal/:id",
         element:<FoodDetails></FoodDetails>,
-        
+        loader: ({params})=> fetch(`www.themealdb.com/api/json/v1/1/lookup.php?i=${params.id}`)
       },
       {
         path:"/about",
